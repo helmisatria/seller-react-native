@@ -24,7 +24,7 @@ export default class AddSub extends Component {
           >
             <Image
               source={require('./icons/minus.png')}
-              style={{ width: 40, height: 40 }}
+              style={{ width: 40, height: 40, tintColor: 'red' }}
             />
           </TouchableOpacity>
         </View>

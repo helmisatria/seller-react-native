@@ -27,7 +27,7 @@ class MenuDetail extends Component {
 
 const styles = {
   textStyle: {
-    fontSize: 19,
+    fontSize: 17,
     // borderWidth: 1
   },
   containerText: {

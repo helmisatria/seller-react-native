@@ -37,12 +37,17 @@ class Screen extends Component {
     )
   }
 
+  pesan() {
+    console.log('PESAAN!');
+  }
   render() {
     console.log(this.state);
     return (
       <ScrollView>
         {this.renderMenus()}
-        <Button>
+        <Button
+          onPress={this.pesan.bind(this)}
+        >
           Pesan
         </Button>
       </ScrollView>

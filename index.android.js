@@ -1,3 +1,3 @@
 import registerApp from './app/index'
 
-registerApp()
+const app = new registerApp()

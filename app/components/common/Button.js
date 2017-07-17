@@ -23,8 +23,8 @@ const styles = {
     color: '#007aff',
     fontSize: 18,
     fontWeight: '600',
-    paddingTop: 10,
-    paddingBottom: 10
+    paddingTop: 12,
+    paddingBottom: 12
   },
   buttonStyle: {
     flexGrow: 1,
@@ -35,7 +35,8 @@ const styles = {
     borderColor: '#007aff',
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 5
+    marginTop: 10,
+    marginBottom: 10
   }
 }
 
