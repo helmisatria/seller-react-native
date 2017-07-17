@@ -1,54 +1,22 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text } from 'react-native'
 import { Card, CardSection } from './common'
+import AddSub from './AddSub'
 
 class MenuDetail extends Component {
 
-  buttonMinusPress() {
-    if (this.props.menu.count > 0) {
-      this.setState({ count: this.props.menu.count-- })
-    }
-  }
-  buttonPlusPress() {
-    this.setState({ count: this.props.menu.count++ })
-  }
-
   render() {
-    const { nama, count } = this.props.menu
-    const { textStyle, containerText, containerStyle } = styles
+    const { nama } = this.props.menu
+    const { textStyle, containerStyle } = styles
     return (
       <Card>
         <CardSection>
           <View style={containerStyle}>
-            <View style={containerText}>
-              <Text style={textStyle}>
-                {nama}
-              </Text>
+            <View style={{ flex: 1 }}>
+              <Text style={textStyle}> {nama} </Text>
             </View>
-            <View>
-              <TouchableOpacity
-                onPress={this.buttonMinusPress.bind(this)}
-              >
-                <Image
-                  source={require('./icons/minus.png')}
-                  style={{ width: 40, height: 40 }}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={containerText}>
-              <Text style={textStyle}>
-                {count}
-              </Text>
-            </View>
-            <View>
-              <TouchableOpacity
-                onPress={this.buttonPlusPress.bind(this)}
-              >
-                <Image
-                  source={require('./icons/plus.png')}
-                  style={{ width: 40, height: 40 }}
-                />
-              </TouchableOpacity>
+            <View style={{ flex: 1 }}>
+              <AddSub menu={this.props.menu} />
             </View>
           </View>
         </CardSection>
@@ -59,19 +27,20 @@ class MenuDetail extends Component {
 
 const styles = {
   textStyle: {
-    fontSize: 19
+    fontSize: 19,
+    // borderWidth: 1
   },
   containerText: {
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
     alignSelf: 'center',
     // borderWidth: 1
   },
   containerStyle: {
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }
-
 
 export default MenuDetail
