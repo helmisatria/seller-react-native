@@ -4,20 +4,45 @@ import { Card, CardSection } from './common'
 import AddSub from './AddSub'
 
 class MenuDetail extends Component {
+  constructor(props) {
+    super(props)
+    const { screen, flexStyle, data } = this.props
 
+    this.state = {
+      screen,
+      flexStyle,
+      data
+    }
+  }
+
+  renderAddSub() {
+    switch (this.props.screen) {
+      case 'pesan':
+        return (
+          <View style={{ flex: 1 }}>
+            <AddSub menu={this.props.menu} />
+          </View>
+        )
+      default:
+        return (
+          <View style={{ flex: 1 }}>
+            <Text>{this.props.menu.count}</Text>
+          </View>
+        )
+    }
+  }
   render() {
-    const { nama } = this.props.menu
+    const flexStyle = this.props.flexStyle
     const { textStyle, containerStyle } = styles
+    const { nama } = this.props.menu
     return (
       <Card>
         <CardSection>
           <View style={containerStyle}>
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: flexStyle }}>
               <Text style={textStyle}> {nama} </Text>
             </View>
-            <View style={{ flex: 1 }}>
-              <AddSub menu={this.props.menu} />
-            </View>
+            {this.renderAddSub()}
           </View>
         </CardSection>
       </Card>

@@ -1,14 +1,14 @@
 import { Navigation } from 'react-native-navigation'
-// import Icon from 'react-native-vector-icons/EvilIcons'
-// import { iconsMap, iconsLoaded } from './helpers/appIcons';
+
 import Screen1 from './screens/Screen1'
 import Screen2 from './screens/Screen2'
 import ScreenPesan from './screens/ScreenPesan'
+import ScreenHasil from './screens/ScreenHasil'
 
 Navigation.registerComponent('Screen1', () => Screen1)
 Navigation.registerComponent('Screen2', () => Screen2)
 Navigation.registerComponent('ScreenPesan', () => ScreenPesan)
-
+Navigation.registerComponent('ScreenHasil', () => ScreenHasil)
 
 const icon = require('./components/icons/coin.png')
 
@@ -29,7 +29,7 @@ export default () => {
       },
       {
         label: 'Hasil',
-        screen: 'Screen1',
+        screen: 'ScreenHasil',
         title: 'Bakmi Jawa 232',
         icon: icon,
         selectedIcon: icon, // iOS only
